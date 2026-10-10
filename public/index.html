@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="同济人的校园导航：学习、生活与社区入口，以及保护个人信息的同济账号证明码。">
+  <meta name="theme-color" content="#12628a">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self' https://tongji-api.hachile.org; base-uri 'none'; form-action https://www.bing.com; object-src 'none'">
+  <meta name="referrer" content="no-referrer">
+  <link rel="canonical" href="https://tongji.hachile.org/">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css">
+  <script src="/config.js" defer></script>
+  <script src="/app.js" defer></script>
+  <title>同济导航 · Tongji Life</title>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <header class="header"><div class="header-inner">
+    <a class="brand" href="/"><span class="brand-mark" aria-hidden="true">T</span><span>同济导航<small>TONGJI LIFE</small></span></a>
+    <form class="search" action="https://www.bing.com/search" method="get" role="search"><label class="sr-only" for="search">搜索网络</label><input id="search" name="q" type="search" placeholder="搜索网络，或下方筛选校园站点…" required><button type="submit">Bing 搜索</button></form>
+    <a class="home-link" href="https://home.hachile.org/">Gunpowder Central</a>
+  </div></header>
+  <main id="main" class="wrap">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy"><p class="eyebrow">同舟共济 · 校园生活，从这里出发</p><h1 id="hero-title">你的同济<br><span>互联网首页。</span></h1><p>把学习、办事、生活和社区入口放在一起。<br>少找一个网址，多留一点时间给校园。</p><div class="hero-links"><a href="#directory">浏览校园站点</a><a href="#identity">同济账号认证</a></div></div>
+      <div class="hero-letter" aria-hidden="true">TJ<span>EST. 1907</span></div>
+    </section>
+    <section id="identity" class="identity" aria-labelledby="identity-title">
+      <div class="identity-intro"><p class="eyebrow">IDENTITY / 账号证明</p><h2 id="identity-title">证明你有同济账号，<br>无需公开姓名和学号。</h2><p>完成学校统一身份认证后获得一次性证明码。将它交给需要核验的人，由对方在这里查询。</p><span class="status" id="auth-status">认证尚未开放 · 等待学校应用接入批准</span><p class="fine-print">这是独立社区工具。证明码仅说明一次同济账号认证已经完成，不是学校签发的学籍证明，也不能保证出示者就是账号本人。</p></div>
+      <div class="identity-actions">
+        <form id="generate-form"><h3>01 / 生成证明码</h3><p>10 分钟有效，核验一次后失效。密码仅在学校官方登录页面输入。</p><label class="consent"><input id="consent" type="checkbox" required disabled><span>我理解证明范围，同意生成可分享的一次性账号认证证明。</span></label><button id="generate" class="primary" type="submit" disabled>通过同济统一身份认证</button></form>
+        <div id="proof-panel" class="proof-panel" hidden><h3>你的证明码</h3><output id="proof-code"></output><p id="proof-expiry"></p><button id="copy-proof" type="button">复制证明码</button><button id="forget-proof" class="quiet" type="button">清除本页证明码</button><p class="fine-print">仅保存在当前页面内存中，刷新后不再显示。分享给核验方即可，勿公开发布。</p></div>
+        <form id="verify-form"><h3>02 / 核验证明码</h3><label class="sr-only" for="verify-code">一次性证明码</label><div class="verify-row"><input id="verify-code" name="code" placeholder="TJ-…" autocomplete="off" spellcheck="false" maxlength="25" pattern="TJ-[A-Za-z0-9_-]{22}" required disabled><button id="verify" type="submit" disabled>核验</button></div><p class="fine-print">点击核验即消耗该码。结果只显示账号认证状态和时间。</p></form>
+        <p id="result" class="result" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+    <section id="directory" aria-labelledby="directory-title"><div class="directory-heading"><div><p class="eyebrow">DIRECTORY / 校园站点</p><h2 id="directory-title">常用入口</h2></div><label class="filter"><span>筛选站点</span><input id="filter" type="search" placeholder="教务、邮箱、资料…" autocomplete="off"></label></div>
+      <p id="filter-result" class="sr-only" role="status"></p>
+      <div class="directory-columns">
+        <div class="column">
+          <section class="block"><h3>常用服务 <small>EVERYDAY</small></h3><div class="link-grid">
+            <a href="https://all.tongji.edu.cn/" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">▦</span><strong>一网通办</strong><small>师生服务总入口</small></a>
+            <a href="https://1.tongji.edu.cn/" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">▤</span><strong>教学管理系统</strong><small>选课、课表与成绩</small></a>
+            <a href="https://canvas.tongji.edu.cn/" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">◉</span><strong>Canvas</strong><small>课程与在线学习</small></a>
+            <a href="https://mail.tongji.edu.cn/" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">✉</span><strong>同济邮箱</strong><small>校园电子邮件</small></a>
+            <a href="https://www.lib.tongji.edu.cn/" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">▥</span><strong>图书馆</strong><small>文献与馆藏查询</small></a>
+            <a href="https://www.tongji.edu.cn/" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">⌂</span><strong>同济官网</strong><small>学校资讯与通知</small></a>
+          </div></section>
+          <section class="block"><h3>学习与研究 <small>ACADEMIC</small></h3><div class="link-grid">
+            <a href="https://bksy.tongji.edu.cn/" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">◇</span><strong>本科生院</strong><small>本科教学通知</small></a>
+            <a href="https://gs.tongji.edu.cn/" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">◈</span><strong>研究生院</strong><small>研究生教育资讯</small></a>
+            <a href="https://github.com/GPDdev/GHCollege-Tongji-review-materials" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">▧</span><strong>国豪复习资料</strong><small>GPDdev 资料仓库</small></a>
+            <a href="https://github.com/HSrockstar/Guohao_College_of_Tongji_University" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">▣</span><strong>国豪资料库</strong><small>HSrockstar 资料仓库</small></a>
+          </div></section>
+        </div>
+        <div class="column">
+          <section class="block"><h3>生活与办事 <small>CAMPUS</small></h3><div class="link-grid">
+            <a href="https://vpn.tongji.edu.cn/" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">◎</span><strong>校园 VPN</strong><small>校外访问校园网</small></a>
+            <a href="https://nic.tongji.edu.cn/" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">⚙</span><strong>信息化办公室</strong><small>网络与服务指南</small></a>
+            <a href="https://hello.tongji.edu.cn/" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">✦</span><strong>迎新网</strong><small>新同济人的指南</small></a>
+            <a href="https://www.tongji.edu.cn/cyfw2.htm" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">☷</span><strong>官方常用服务</strong><small>更多校园入口</small></a>
+          </div></section>
+          <section class="block"><h3>社区与连接 <small>COMMUNITY</small></h3><div class="link-grid">
+            <a href="https://www.tongji.icu/" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">☕</span><strong>tongji.icu</strong><small>同济社区</small></a>
+            <a href="https://f.yourtj.de/" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">☏</span><strong>YourTJ</strong><small>同济人的交流空间</small></a>
+            <a href="https://groups.hachile.org/" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">♧</span><strong>社群档案</strong><small>校园与兴趣社群</small></a>
+            <a href="https://ghc.hachile.org/" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">✧</span><strong>国豪专题</strong><small>国豪书院相关站点</small></a>
+          </div></section>
+        </div>
+        <div class="column">
+          <section class="block note"><h3>关于账号证明 <small>HOW IT WORKS</small></h3><ol><li><strong>跳转学校登录</strong><p>获批后通过官方统一身份认证授权本站。</p></li><li><strong>取得一次性证明码</strong><p>认证完成后生成随机码，不包含姓名或学号。</p></li><li><strong>分享给需要核验的人</strong><p>对方粘贴证明码核验，核验后即失效。</p></li></ol><a class="text-link" href="/privacy.html">数据与隐私说明</a></section>
+          <section class="block"><h3>Hachile <small>MY NETWORK</small></h3><div class="link-grid">
+            <a href="https://home.hachile.org/"><span aria-hidden="true">⌂</span><strong>个人主页</strong><small>Gunpowder Central</small></a>
+            <a href="https://tools.hachile.org/"><span aria-hidden="true">⌘</span><strong>工具箱</strong><small>常用在线工具</small></a>
+            <a href="https://site.hachile.org/"><span aria-hidden="true">◌</span><strong>站点总览</strong><small>The Hachile Project</small></a>
+          </div></section>
+        </div>
+      </div><p id="no-results" hidden>没有找到匹配的站点，试试其他关键词。</p>
+    </section>
+    <footer><p>同济导航 · 为同济人的校园生活整理入口。部分服务需要校园网或学校账号。</p><p>布局参考 <a href="https://github.com/SmartHypercube/ustclife">USTC 导航</a>，感谢 Hypercube 与贡献者。本站独立编写，为非官方个人项目。</p><p><a href="https://github.com/GPDdev/tongji.hachile.org">源码与反馈</a><a href="/privacy.html">隐私说明</a><a href="https://home.hachile.org/">返回个人主页</a><span>© 2026 GPDdev</span></p></footer>
+  </main>
+</body>
+</html>

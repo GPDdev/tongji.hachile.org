@@ -1,0 +1,9 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="referrer" content="no-referrer"><title>隐私说明 · 同济导航</title><link rel="icon" href="/icon.svg"><link rel="stylesheet" href="/style.css"></head>
+<body><main class="wrap privacy"><a href="/">返回同济导航</a><p class="eyebrow">PRIVACY / 2026-10-10</p><h1>账号证明与个人信息</h1>
+<p>同济导航由 GPDdev 独立维护，非同济大学官方服务。当前账号认证尚未开放，等待学校批准应用接入。以下说明适用于后续启用的认证流程。</p>
+<h2>登录在哪里完成</h2><p>账号和密码仅在学校官方统一身份认证页面输入。本站不提供账号密码输入框，不接收或保存密码。请在登录前检查学校登录页面的域名。</p>
+<h2>处理哪些数据</h2><p>服务端暂时处理学校签发的令牌，以验证签名、签发者、应用、时间与本次认证请求是否匹配。令牌和其中的姓名、学号等信息不写入本站数据库，也不发送给核验者。</p><p>数据库仅存储随机认证会话的哈希、nonce、PKCE 校验值与有效期，以及一次性证明码的 SHA-256 哈希、签发时间和有效期。会话与证明码最多有效 10 分钟；过期后无法使用，每 10 分钟定时清理，发起认证时也会清理过期数据。</p>
+<h2>证明码代表什么</h2><p>证明码表示有人完成了一次同济账号认证。它不判断在读状态、院系或身份类别，不是官方学籍证明，也不能保证提交证明码的人就是登录者本人。核验结果仅包含认证通过与签发、核验、失效时间。</p><p>码可被任何持有者核验一次。请直接交给需要核验的人，不要公开发布。核验请求如果中途断网，服务端仍可能已经消耗证明码；遇到此情况请重新认证生成。</p>
+<h2>浏览器与基础设施</h2><p>认证回调使用 Secure、HttpOnly、SameSite=Lax 的短期 Cookie。证明码通过 URL fragment 返回，页面立即移除地址栏中的码，仅在页面内存显示，不写入 localStorage，刷新后不再显示。</p><p>网页由 GitHub Pages 托管，认证接口部署后由 Cloudflare Worker 和 D1 提供。限流时会暂时处理来源 IP 的哈希，本站不将它写入数据库。本站不添加访问统计，不记录认证请求内容；基础设施与学校服务可能按其各自政策处理网络日志与备份，本站无法控制其保留期限。</p>
+<h2>如何联系维护者</h2><p>代码与问题反馈：<a href="https://github.com/GPDdev/tongji.hachile.org/issues">GitHub Issues</a>；其他联系方式见 <a href="https://home.hachile.org/#contact">个人主页</a>。反馈时请勿附上密码、令牌或尚未使用的证明码。</p></main></body></html>

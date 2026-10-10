@@ -1,0 +1,22 @@
+{
+  "name": "tongji-identity-api",
+  "main": "src/index.js",
+  "compatibility_date": "2026-10-10",
+  "workers_dev": false,
+  "routes": [{ "pattern": "tongji-api.hachile.org", "custom_domain": true }],
+  "vars": {
+    "AUTH_ENABLED": "false",
+    "CLIENT_ID": "",
+    "PUBLIC_ORIGIN": "https://tongji.hachile.org",
+    "API_ORIGIN": "https://tongji-api.hachile.org"
+  },
+  "d1_databases": [{
+    "binding": "DB",
+    "database_name": "tongji-identity",
+    "database_id": "REPLACE_WITH_D1_DATABASE_ID",
+    "migrations_dir": "migrations"
+  }],
+  "ratelimits": [{ "name": "RATE_LIMITER", "namespace_id": "19071010", "simple": { "limit": 30, "period": 60 } }],
+  "triggers": { "crons": ["*/10 * * * *"] },
+  "observability": { "enabled": false }
+}

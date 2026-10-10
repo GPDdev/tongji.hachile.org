@@ -1,0 +1,9 @@
+ustclife/
+node_modules/
+.wrangler/
+.dev.vars
+.env*
+!.env.example
+worker/wrangler.jsonc
+playwright-report/
+test-results/
